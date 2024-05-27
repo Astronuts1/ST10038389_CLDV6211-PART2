@@ -1,0 +1,271 @@
+﻿<html>
+<head>
+    <title>Sign Up</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Courier New;
+            background-color: white;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        .background-image {
+            background-color: white;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100%;
+            filter: blur(8px);
+        }
+
+        .hBanner {
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            margin-bottom: 50px;
+        }
+
+            .hBanner h2 {
+                color: black;
+                border-bottom: 1.5px solid black;
+                width: 50vw;
+                text-align: center;
+                font-family: 'Exo', sans-serif;
+            }
+
+        .phrase {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-left: 30px;
+            padding-bottom: 50px;
+            padding-top: 50px;
+            line-height: 0;
+            height: auto;
+            align-items: center;
+        }
+
+            .phrase h1 {
+                font-size: 60px;
+                color: #0d0d0d;
+                text-align: center;
+                font-family: 'Exo', sans-serif;
+            }
+
+        .hContent {
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            line-height: 2;
+            background-color: white;
+            font-family: 'Exo', sans-serif;
+        }
+
+            .hContent img {
+                font-size: 16px;
+            }
+
+        .hBox {
+            width: 70%;
+            margin: 5px;
+        }
+
+        .footer {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #333333;
+            height: auto;
+            padding: 20px;
+        }
+
+            .footer img {
+                width: 150px;
+                height: auto;
+                border-radius: 10px;
+            }
+
+        .navcont {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+            .navcont a {
+                display: block;
+                margin-bottom: 10px;
+                text-decoration: none;
+                color: black;
+                font-weight: bold;
+                font-family: 'Exo', sans-serif;
+                transition: background-color 0.3s;
+            }
+
+                .navcont a:hover {
+                    background-color: #e3f6f5;
+                }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        input[type=text] {
+            padding: 7px;
+            margin-top: 8px;
+            font-size: 14px;
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 25%;
+        }
+
+        button[type=submit] {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 8px;
+            margin-left: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+            button[type=submit]:hover {
+                background-color: lawngreen;
+            }
+
+        button#removeTextButton {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 8px;
+            margin-left: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+            button#removeTextButton:hover {
+                background-color: orangered;
+            }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .slideshow-container img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover {
+                    background-color: #111;
+                }
+
+        div.scroll-container {
+            background-color: #111;
+            overflow: auto;
+            white-space: nowrap;
+            padding: 10px;
+        }
+
+            div.scroll-container img {
+                padding: 10px;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="hBanner">
+        <h2>SIGN UP HERE!</h2>
+    </div>
+
+    <div class="hContent">
+        <div class="hBox">
+            <form asp-controller="Home" asp-action="" method="post">
+                <p>Please fill in your Details below:</p>
+                <input type="text" name="Name" placeholder="Name" required>
+                <input type="text" name="Surname" placeholder="Surname" required>
+                <input type="text" name="Email" placeholder="example@gmail.com" required>
+                <button type="submit">Sign Up</button>
+                <button type="button" id="removeTextButton" onclick="clearInputs()">REMOVE TEXT</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <footer>
+            <img src="~/images/khumalocraft - logo.png" alt="" />
+            <h2>KhumaloCraft Emporium</h2>
+            <p style="color: #f2f2f2">James Khumalo</p>
+            <p style="color: #f2f2f2">Cell: 021 3475 605</p>
+            <p style="color: #f2f2f2">Email: JamesCrafts@gmail.com</p>
+            <p style="color: #f2f2f2">Store Address: Radisson Blu Hotel, Durban Umhlanga Rocks, 4320</p>
+            <p style="color:#f2f2f2">copyright &copy;2024.All rights reserved</p>
+            <p style="color: black">Designed by Luqmaan Aziz </p>
+        </footer>
+    </div>
+
+    <script>
+        function clearInputs() {
+            document.getElementsByName("Name")[0].value = "";
+            document.getElementsByName("Surname")[0].value = "";
+            document.getElementsByName("Email")[0].value = "";
+        }
+    </script>
+
+</body>
+</html>
+<!----------------------END OF FILE----------------------------->
